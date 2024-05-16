@@ -1,0 +1,113 @@
+{
+  "modelVersion" : 1,
+  "sources" : [ {
+    "sourceType" : "repository",
+    "id" : "mddhtest-9bk",
+    "user" : "paulagmiller@github",
+    "repositoryId" : "mddhtest-9bk"
+  } ],
+  "entries" : [ {
+    "path" : "Templates/NES_TS Medical Devices Data Hub.v0 (6).t.json",
+    "type" : "template",
+    "id" : "NES_TS Medical Devices Data Hub.v0 (6)",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-16T09:44:55.738Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ACTION.service.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.device.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.anatomical_location.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.organisation_cc.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.identifier_cc.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.medical_device_regulatory_details.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report-procedure.v1"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-CLUSTER.xds_metadata.v0"
+    }, {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-ACTION.procedure.v1"
+    } ]
+  }, {
+    "path" : "Templates/NES_TS Medical Devices Data Hub.v0 (6).opt",
+    "type" : "opt",
+    "id" : "NES_TS Medical Devices Data Hub.v0 (6)",
+    "lastModified" : "2024-05-16T09:44:55.738Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ACTION.service.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ACTION.service.v1",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.device.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.device.v1",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.anatomical_location.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.anatomical_location.v1",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.organisation_cc.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.organisation_cc.v0",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.identifier_cc.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.identifier_cc.v0",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.medical_device_regulatory_details.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.medical_device_regulatory_details.v0",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report-procedure.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report-procedure.v1",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z",
+    "dependsOn" : [ {
+      "type" : "archetype",
+      "reference" : "openEHR-EHR-COMPOSITION.report.v1"
+    } ]
+  }, {
+    "path" : "Archetypes/openEHR-EHR-COMPOSITION.report.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-COMPOSITION.report.v1",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-CLUSTER.xds_metadata.v0.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-CLUSTER.xds_metadata.v0",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  }, {
+    "path" : "Archetypes/openEHR-EHR-ACTION.procedure.v1.adl",
+    "type" : "archetype",
+    "id" : "openEHR-EHR-ACTION.procedure.v1",
+    "sourceId" : "mddhtest-9bk",
+    "lastModified" : "2024-05-15T15:52:21.558Z"
+  } ]
+}
