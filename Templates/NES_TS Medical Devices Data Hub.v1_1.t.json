@@ -213,7 +213,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.1.0",
   "generated" : true,
-  "templateId" : "NES_TS Medical Devices Data Hub.v0",
+  "templateId" : "NES_TS Medical Devices Data Hub v1.0",
   "otherMetaData" : { },
   "templateOverlays" : [ {
     "@type" : "TEMPLATE_OVERLAY",

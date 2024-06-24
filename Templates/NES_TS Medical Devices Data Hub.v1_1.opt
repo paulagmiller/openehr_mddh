@@ -45,9 +45,9 @@
         <value>f107d367-f955-445c-9f58-fb944be14e2d</value>
     </uid>
     <template_id>
-        <value>NES_TS Medical Devices Data Hub.v0 (6)</value>
+        <value>NES_TS Medical Devices Data Hub v1.1</value>
     </template_id>
-    <concept>NES_TS Medical Devices Data Hub.v0 (6)</concept>
+    <concept>NES_TS Medical Devices Data Hub</concept>
     <definition>
         <rm_type_name>COMPOSITION</rm_type_name>
         <occurrences>
