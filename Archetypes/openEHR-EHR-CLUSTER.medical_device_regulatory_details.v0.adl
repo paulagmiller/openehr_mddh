@@ -28,15 +28,16 @@ description
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
 		["custodian_organisation"] = <"Apperta UK">
-		["references"] = <"Derived from: <Add reference to original resource here>
+		["references"] = <"Derived from:
 
 https://www.gov.uk/government/publications/medicines-and-medical-devices-bill-overarching-documents/factsheet-medical-devices-overview">
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["original_publisher"] = <"Apperta UK">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"D4B06B7B01082A38E5A95EDD501F1969">
+		["MD5-CAM-1.0.1"] = <"8c671a5ee7d15e433ebf42ce7fcea940">
 		["build_uid"] = <"4c3b6c44-c6e3-4a8b-8a9a-70c420a1c72d">
 		["revision"] = <"0.0.1-alpha">
+		["current_contact"] = <"paul.miller@nhs.scot">
 	>
 
 definition
@@ -78,7 +79,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"Medical device regulatory details">
-					description = <"NES_TS UK_MHRA Medical Device. This cluster is for enabling the recording of regulatory details about a medical device, specifically 'class', in the EHR. THe requirement originally arose in the NHS Scotland Medical Devices Data Hub programme, part of the 'Scan for Safety' programme intended to enable the capture of details of implantable medical devices at the time of surgical procedures. This cluster allows the programme to capture the 'Class' value as it was at that event.">
+					description = <"NES_TS UK_MHRA Medical Device. This cluster is for enabling the recording of regulatory details about a medical device, specifically 'class', in the EHR. THe requirement originally arose in the NHS Scotland Medical Devices Data Hub programme, part of the 'Scan for Safety' programme intended to enable the capture of details of implantable medical devices at the time of surgical procedures. This cluster allows the programme to capture the 'Class' value as it was at the time of the event.">
 				>
 				["at0001"] = <
 					text = <"Class">
