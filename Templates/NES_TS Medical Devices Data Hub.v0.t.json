@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "75f1ebce-78bd-4898-99b6-c888938e81cb",
-      "MD5-CAM-1.0.1" : "997611be71ecd4e92cca72bfc094718e",
+      "MD5-CAM-1.0.1" : "f968bcc6948a1ebaa26eca546ae3b1a3",
       "PARENT:MD5-CAM-1.0.1" : "2A789520F48E91960C4825733C8BA68F",
       "original_language" : "ISO_639-1::en"
     },
@@ -1418,6 +1418,21 @@
           "misuse" : "Niet te gebruiken om gegevens vast te leggen over uitgevoerde activiteiten voor activiteiten waarvoor een speciaal gebouwd ACTION-archetype nodig is omdat zij zeer specifieke vereisten inzake gegevensregistratie of trajectstappen hebben. Bijvoorbeeld: ACTION.procedure of ACTION.health_education.",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "zh-cn" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "zh-cn"
+          },
+          "purpose" : "旨在用于记录关于临床医务人员、组织机构或代理机构/服务机构所提供的，简单的，与健康相关的服务或活动的详情。",
+          "keywords" : [ "服务", "服务项目", "转诊", "转诊介绍", "转介", "推荐", "推介", "就诊", "就医", "访视", "就医", "就医过程", "接触", "健康医疗服务接触" ],
+          "use" : "旨在用于记录关于临床医务人员、组织机构或代理机构/服务机构所提供的，简单的，与健康相关的服务或活动的详情。其中包括追踪从计划编制/规划、排程/排期、提供/交付服务直至完成的整个过程的进展情况，以及相对于既定照护服务/诊疗路径的偏差/偏离情况（如服务延期或取消）。为此，实现的方式就是，在本原始型当中，记录特定活动的相关数据元，并将这些数据元均描述为“路径”（Pathway）照护服务/诊疗流程步骤。\r\n\r\n本原始型的适用范围有意涵盖了各类临床服务的活动，旨在作为适用于所有非复杂用例的通用原始型。示例包括但不限于：\r\n- 患者为接受预防性照护/诊疗服务，自行提出的牙科健康检查转诊；\r\n- 患者因肌肉骨骼劳损接受治疗而前往物理治疗师处的一系列就诊；\r\n- 转诊：由请求方健康医疗服务提供者（如初级保健/基层临床医务人员）将患者转诊至接收方健康医疗服务提供者（如专科医生），以便让患者获得特定的服务、建议或照护/诊疗服务。\r\n\r\n如需记录有关该服务的更多结构化详情，可在“服务详情”（Service detail）插槽中插入专用原始型。\r\n\r\n仅可采取下列两种方式来使用本原始型：\r\n- 作为关于所提供服务的完整记录；\r\n- 作为主要记录所请求服务的状态的框架，同时利用单独的观察类原始型（OBSERVATION）来记录所提供服务的实际观察（检验/检查）结果，如观察类听力筛查结果原始型（OBSERVATION.hearing_screening_result）。\r\n\r\n可以采取下列两种方式之一来管理那些与服务[项目]管理相关的时间：\r\n- 利用参考模型：任何路径步骤的执行时间均会采用各步骤的行动类（ACTION）时间属性。\r\n- 原始型化数据元：“所排程的日期/时间”（Scheduled date/time）数据元旨在用于记录当时预定执行此项服务的时间。注：“已排程”（Scheduled）路径步骤相应的行动类时间属性，将记录的是当时将此项临床活动排程到系统当中的时间，而并非预定开展/执行此项活动的预定日期/时间。\r\n\r\n在实际工作中，部分的服务（如门诊照护/诊疗过程中）为即时开展，仅会发生一次，无需提前下达医嘱。关于此类服务的详情，将会在“服务已完成”（Service completed）路径步骤下录入相关的数据。在某些情况下，会下达关于重复型服务的医嘱，而此时，对于此类服务的每次重复，将会在“服务已提供”（Service delivered）路径步骤下记录相关的数据，并保持服务医嘱处于有效状态。当记录最后一次的服务提供情况时，则记录的是“服务已完成”行动，以表明此项服务医嘱已处于已完成状态。\r\n\r\n在其他的情况下（如二级照护/诊疗服务），可能会利用相应的指令类请求原始型（INSTRUCTION.request）来表达针对特定服务的正式医嘱。随后，则可以利用这一行动类原始型来记录关于开展/执行此项医嘱的时间和方式等工作流信息。\r\n\r\n采用这一行动类原始型来记录信息，表明已实际发生某项活动；此项活动通常为相应的服务提供过程本身，但也可能是一次失败的尝试，或者是其他的活动（如服务提供的延期）。若此项服务存在正式的医嘱，则会采用相应的“路径”步骤来表达该项医嘱的状态。例如，在每个“路径”步骤当中，可以在电子健康档案（EHR）病程/进展记录里，采用单独的条目来记录转诊请求的进展状态：\r\n- 记录转诊的已排程的开始日期/时间（“服务已排程”）；\r\n- 记录转诊已完成，并且有可能包括所提供服务的相关信息（“服务已完成”）。\r\n\r\n当活动遵循的是“计划中（Planned）> 已排程（Scheduled）> 进行中（Active）> 已完成（Completed）”的常规状态流程时，通常无需记录“原因”（Reason）；该原因字段通常用于记录偏离常规诊疗/照护服务路径的原因。\r\n\r\n请注意，在openEHR参考模型当中，存在“时间”（Time）属性，旨在用于记录相应“行动”（Action）之中每个路径步骤的执行日期和时间。而且，服务开始时间（需采用“服务已提供”路径步骤）或服务中止时间（需采用“服务已中止”路径步骤）也都将采用该属性来记录。",
+          "misuse" : "并非旨在用于记录关于所开展/执行的那些需要采用专用行动类原始型的活动的数据，因为此类活动有着非常特殊的数据记录要求或路径步骤要求。例如：行动类操作原始型（ACTION.procedure）或行动类健康宣教原始型（ACTION.health_education）。",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -2217,7 +2232,8 @@
             "description" : "Het ID dat aan de bestelling is toegewezen door de dienstverlener die de dienst uitvoert.",
             "comment" : "Dit is gelijkwaardig aan Filler Identifier in FHIR."
           }
-        }
+        },
+        "zh-cn" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -2289,6 +2305,20 @@
         "name" : "Mattijs Kuhlmann",
         "organisation" : "Nedap",
         "email" : "mattijs.kuhlmann@nedap.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Lin Zhang",
+        "organisation" : "Freelancer",
+        "email" : "linforest@163.com"
       },
       "otherDetails" : { }
     } ]
@@ -2676,6 +2706,51 @@
           "keywords" : [ "procedimiento", "intervención", "terapia", "cirugía", "diagnóstico", "evaluación", "curación", "tratamiento" ],
           "use" : "Se utiliza para registrar información sobre las actividades requeridas para llevar a cabo un procedimiento, incluyendo planificación, coordinación, ejecución, suspensión, cancelación, documentación y finalización. Esto se hace mediante el registro de los datos sobre actividades específicas, según la definición de los pasos de la vía clínica definida en el arquetipo.\n\nEl alcance de este arquetipo abarca actividades para una amplia gama de procedimientos clínicos realizados para la evaluación, investigación, detección, diagnóstico,\ncurativos, terapéuticos o fines paliativos. Los ejemplos van desde las actividades relativamente simples, como la inserción de una cánula intravenosa, hasta operaciones quirúrgicas complejas.",
           "misuse" : "No utilizar para registrar detalles acerca de la anestesia, para eso utilizar un arquetipo de ACTION separado.\nNo utilizar para registrar detalles acerca de estudios por imágenes, para eso utilizar el arquetipo ACTION.imaging_exam.\nNo utilizar para registrar detalles acerca de estudios de laboratorio, para eso utilizar el arquetipo ACTION.laboratory_test.\nNo utilizar para registrar detalles acerca de educación brindada, para eso utilizar el arquetipo ACTION.health_education.\nNo utilizar para registrar detalles acerca de actividades administrativas, para eso utilizar un arquetipo ADMIN separado.\nNo utilizar para registrar detalles acerca de actividades relacionadas, como medicación administrada durante el procedimiento, o sobre imágenes que se utilizaron como guía durante el procedimiento, para esto utilizar arquetipos de ACTION separados, dentro de la misma plantilla.\nNo utilizar para registrar detalles acerca del informe de la operación, para eso se debe utilizar una plantilla donde este arquetipo sea parte de la misma.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Registar informações sobre as atividades necessárias para realizar um procedimento, incluindo planeamento, programação, desempenho, suspensão, cancelamento, documentação e conclusão.",
+          "keywords" : [ "procedimento(pt)", "intervenção(pt)", "cirúrgico(pt)", "médico(pt)", "clínico(pt)", "terapêutico(pt)", "diagnóstico(pt)", "cura(pt)", "tratamento(pt)", "avaliação(pt)", "investigação(pt)", "rastreio(pt)", "paliativo(pt)", "terapia(pt)" ],
+          "use" : "Use para registar informações sobre as atividades necessárias para realizar um procedimento, incluindo o planeamento, programação, desempenho, suspensão, cancelamento, documentação e conclusão. Isso é feito pelo registo de dados contra atividades específicas, conforme definido pelas etapas de fluxo de cuidado 'Pathway' (caminho) neste arquétipo.\r\n\r\nO âmbito deste arquétipo engloba atividades para uma ampla gama de procedimentos clínicos realizados para fins de avaliação, investigação, de triagem, diagnósticos, curativos, terapêuticos ou paliativos. Os exemplos vão desde as atividades relativamente simples, como a inserção de uma catéter intravenoso, até operações cirúrgicas complexas.\r\n\r\nInformações adicionais estruturadas e detalhadas sobre o procedimento podem ser capturadas usando arquétipos específicos inseridos no slot 'Detalhes do procedimento', quando necessário.\r\n\r\nOs prazos relativos a um procedimento podem ser geridos de duas formas:\r\n- Utilizando o modelo de referência - o tempo de execução de qualquer etapa do percurso utilizará o atributo ACTION time para cada etapa.\r\n- Elementos de dados arqueados:\r\n--- o elemento de dados 'Data/hora programada' destina-se a registar a hora exata em que o procedimento está planeado. Nota: o atributo de tempo ACTION correspondente para a etapa Caminho agendado registará o tempo que o procedimento foi programado num sistema, não a data/ hora prevista em que o procedimento deve ser realizado; e\r\n--- A data/hora final destina-se a registar a hora exata em que o procedimento terminou. Ele pode ser usado para documentar os procedimentos complexos com vários componentes. Nota: o atributo de tempo ACTION correspondente para o 'Procedimento executado' documentará o tempo em que cada componente executado foi iniciado. Este elemento de dados 'Data/hora final' registará a data/hora do componente ativo final do procedimento. Isso permitirá calcular a duração total do procedimento ativo.\r\n\r\nNo contexto de um Relatório de Operação, este arquétipo será usado para registar apenas o que foi feito durante o procedimento. Serão utilizados arquétipos separados para registar os outros componentes necessários do Relatório de Operação, incluindo a recolha de amostras de tecido, a utilização de orientação por imagem, os resultados da operação, as instruções pós-operatórias e os planos de acompanhamento.\r\n\r\nNo contexto de uma lista ou resumo de problemas, esse arquétipo pode ser usado para representar procedimentos que foram realizados. O EVALUATION.problem_diagnosis será utilizado para representar os problemas e diagnósticos do doente.\r\n\r\nNa prática, muitos procedimentos (por exemplo, em cuidados ambulatórios) ocorrerão uma vez e não serão solicitados com antecedência. Os detalhes sobre o procedimento serão adicionados contra a etapa do caminho, 'Procedimento concluído'. Em alguns casos, um procedimento recorrente será ordenado, e nesta situação os dados contra a etapa 'Procedimento executado' serão registados em cada ocasião, deixando a instrução no estado ativo. Quando a última ocorrência é registada, a ação 'Procedimento concluído' é registada mostrando que essa ordem está agora no estado concluído.\r\n\r\nNoutras situações, como a assistência secundária, pode haver uma ordem formal para um procedimento usando um arquétipo de INSTRUÇÃO correspondente. Este arquétipo ACTION pode então ser usado para registar o fluxo de trabalho de quando e como o pedido foi realizado.\r\n\r\nRegistar informações usando este arquétipo ACTION indica que algum tipo de atividade realmente ocorreu; isso geralmente será o procedimento em si, mas pode ser uma tentativa fracassada ou outra atividade, como adiar o procedimento. Se houver uma ordem formal para o procedimento, o estado dessa ordem é representado pela etapa Pathway (caminho) contra a qual os dados são registados. Por exemplo, usando este arquétipo, o estado de progresso de uma ordem de Gastroscopia pode ser registado por entradas separadas nas notas de progresso do EHR em cada passo do 'Caminho':\r\n- registar a data/hora de início prevista para a gastroscopia (procedimento agendado); e\r\n- registar que o procedimento de gastroscopia foi concluído, incluindo informações sobre os pormenores do procedimento (procedimento concluído).\r\n\r\nPor favor, note que no openEHR Reference Model existe um atributo 'Time', que se destina a registar a data e a hora em que cada etapa do caminho da Ação foi executada. Este é o atributo a ser usado para registar o início do procedimento (usando a etapa de caminho 'Procedimento realizado') ou o tempo em que o procedimento foi abortado (usando a etapa de caminho 'Procedimento abortado').",
+          "misuse" : "Não deve ser usado para registar detalhes sobre a anestesia - use um arquétipo ACTION separado para essa finalidade.\r\n\r\nNão deve ser usado para registar detalhes sobre exames de imagem - use ACTION.imaging_exam para este propósito.\r\n\r\nNão deve ser usado para registar detalhes sobre testes laboratoriais - use ACTION.laboratory_test para esta finalidade.\r\n\r\nNão deve ser usado para registar detalhes sobre a educação entregue - use ACTION.health_education para este propósito.\r\n\r\nNão deve ser usado para registar detalhes sobre atividades administrativas - use arquétipos ADMIN, específicos para essa finalidade.\r\n\r\nNão deve ser usado para registar detalhes sobre atividades relacionadas, como o uso de amostras congeladas tomadas durante uma operação, medicação administrada como parte do procedimento ou quando a orientação por imagem é usada durante o procedimento - usar arquétipos ACTION separados e específicos dentro do mesmo modelo para esta finalidade.\r\n\r\nNão deve ser usado para registar toda uma operação ou relatório de procedimento - use um modelo no qual este arquétipo é apenas um componente do relatório completo.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "zh-cn" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "zh-cn"
+          },
+          "purpose" : "旨在记录为执行某项操作时所需开展的各项活动的相关信息，包括操作的规划/计划编制、排程/排期、执行/实施、暂停、取消/撤销、记载/文档记录以及完成等环节。",
+          "keywords" : [ "操作", "操作项目", "干预", "干预措施", "外科", "外科手术", "医疗", "临床", "治疗性", "治疗类", "诊断性", "诊断类", "治愈", "治疗", "处理", "处置", "评价", "评估", "探查", "检查", "筛查", "姑息治疗", "疗法", "治疗方法" ],
+          "use" : "旨在记录为执行某项操作时所需开展的各项活动的相关信息，包括操作的规划/计划编制、排程/排期、执行/实施、暂停、取消/撤销、记载/文档记录以及完成等环节。为此采取的方法就是记录关于本原始型之中的“路径”（Pathway）照护服务流程步骤所定义的这些具体活动的数据。\r\n\r\n本原始型的适用范围涵盖为了实现评估类、探查类、筛查类、诊断类、治愈类、疗法类或姑息治疗类等目的而开展的各类临床操作的相关活动。示例既包括相对简单的操作（如静脉插管置入），也涵盖复杂的外科手术。\r\n\r\n必要时，通过将针对特定用途的原始型插入到操作详情槽位“Procedure detail”当中，来记录更多其他关于当前操作的结构化详情。\r\n\r\n可采取下列两种方式之一来管理与当前操作相关的时间特征：\r\n\r\n- 采用参考模型：任何路径步骤的执行时间均采用该步骤的行动类时间属性ACTION.time。\r\n- 原始型化的数据元：\r\n--- 排程日期/时间“Scheduled date/time”数据元用于记录为操作编制计划/排程时的精确时间。注：已排程路径步骤相应的行动类时间属性ACTION.time，记录的是将当前操作排程到信息系统之中时的时间，而并非预定开展/执行当前操作时的日期/时间；\r\n--- 最终结束日期/时间“Final end date/time”用于记录操作实际结束时的精确时间。该数据元可用于记录包含多个组成部分的复杂操作。注：针对已执行操作“Procedure performed”的行动类时间属性ACTION.time，记录的是所执行的每个组成部分的实际开始[执行]时间；而最终结束日期/时间数据元则记录的是操作最后一个有效的组成部分的[实际]结束日期/时间。这样，就可以利用这些来计算当前整个有效操作的总时长。\r\n\r\n在“手术报告”（Operation Report）语境下，本原始型仅用于记录手术操作过程中实际执行的内容。对于手术报告所需的其他组成部分（包括组织标本取样、影像引导的使用、手术发现、术后指导及随访计划等），则需要利用其他单独的原始型来加以记录。\r\n\r\n在“问题列表”（Problem list）或“问题摘要”（Problem summary）语境下，本原始型可用于呈现已完成的那些操作。而问题诊断评估类原始型 EVALUATION.problem_diagnosis 则用于表达患者的各类问题和诊断。\r\n\r\n实际应用中，许多的操作（如门诊诊疗中的操作）属于是一次性的执行，且并不会提前下达医嘱。对于此类操作的相关详情，可在“已完成操作”（Procedure completed）路径步骤下加以录入。在某些情况下，会下达关于重复性操作的医嘱；此时，就需在每次执行操作的场合下，在“已执行操作”（Procedure performed）路径步骤之下记录相关的数据，并将相应的操作指令/医嘱保持在有效状态。当记录最后一次[的重复性]操作执行情况时，将会记录“已完成操作”（Procedure completed）行动，以表明该医嘱现已处于完成状态。\r\n\r\n在其他的场景（如二级诊疗/照护服务）下，可能会存在针对某一操作的正式医嘱，并利用相应的指令类原始型（INSTRUCTION）来加以记录。那么，则可以利用本动作类原始型（ACTION）来记录关于该医嘱执行时间和执行方式的工作流信息。\r\n\r\n利用本动作类原始型（ACTION）来记录信息，表明已实际发生了某种活动；该活动通常为当前操作本身，但也可能是一次失败的尝试，或其他的活动（如操作延期）。若当前操作有相应的正式医嘱，则会利用录入数据时所针对的路径步骤来表达该医嘱的状态。例如，每个“路径”步骤上，则可利用本原始型，在电子健康档案（EHR）病程记录当中，采用多个单独的条目，来记录胃镜检查医嘱的进展状态：\r\n\r\n- 记录为胃镜检查（已排程操作）所排程的开始日期/时间；\r\n- 记录胃镜检查已完成，包括操作详情（已完成操作）的相关信息。\r\n\r\n请注意，在openEHR参考模型中，其中设有的时间属性“Time”，用于记录相应行动（Action）之中每个路径步骤的实际执行日期/时间。该属性旨在用于记录当前操作的开始（利用“已执行操作”路径步骤）或当前操作的中止时间（利用“已中止操作”路径步骤）。\r\n",
+          "misuse" : "并非旨在用于记录麻醉的相关详情 —— 应当采用单独的行动类原始型（ACTION）来记录此类的信息。\r\n\r\n并非旨在用于记录影像检查的相关详情 —— 应当采用行动类影像检查原始型（ACTION.imaging_exam）来记录此类的信息。\r\n\r\n并非旨在用于记录实验室检查的相关详情 —— 应当采用行动类实验室检验项目原始型（ACTION.laboratory_test）来记录此类的信息。\r\n\r\n并非旨在用于记录关于所提供的健康教育的相关详情 —— 应当采用行动类健康宣教原始型（ACTION.health_education）来记录此类的信息。\r\n\r\n并非旨在用于记录行政管理类活动的相关详情 —— 应当采用特定的管理类原始型（ADMIN）来记录此类的信息。\r\n\r\n并非旨在用于记录相关活动的详情，如术中冰冻切片的使用、操作过程中所施用的药物或操作过程中所采用的影像引导措施等 —— 应当在同一模板内采用特定单独的行动类原始型（ACTION）来记录此类的信息。\r\n\r\n并非旨在用于记录完整的手术或操作报告 —— 应当采用模板来加以记录，而本原始型则仅仅是作为完整报告的组成部分之一。",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Registrar informació sobre les activitats necessàries per dur a terme un procediment, inclosa la planificació, la programació, l'execució, la suspensió, la cancel·lació, la documentació i la finalització.",
+          "keywords" : [ "procediment", "intervenció", "quirúrgic", "metge", "clínic", "terapèutic", "diagnòstic", "curar", "tractament", "avaluació", "investigació", "detecció", "pal·liatiu", "teràpia" ],
+          "use" : "S'utilitza per registrar informació sobre les activitats requerides per dur a terme un procediment, incloent-hi planificació, coordinació, execució, suspensió, cancel·lació, documentació i finalització. Això es fa mitjançant el registre de les dades sobre activitats específiques, segons la definició de les diferents etapes/apartats definit a l'arquetip.\r\n\r\nL'abast d'aquest arquetip inclou activitats per a una àmplia gamma de procediments clínics realitzats amb fins avaluatius, de recerca, cribratge, diagnòstic, curatius, terapèutics o pal·liatius. Els exemples van des d'activitats relativament senzilles, com ara la inserció d'una cànula intravenosa, fins a operacions quirúrgiques complexes.\r\n\r\nEs pot capturar informació addicional estructurada i detallada sobre el procediment utilitzant arquetips específics inserits a l'slot \"Detall del procediment\", quan sigui necessari.\r\n\r\nEls temps relacionats amb un procediment es poden gestionar de dues maneres:\r\n- Utilitzant el model de referència: el temps de realització de qualsevol etapa del procés utilitzarà l‟atribut de temps ACTION de cada etapa.\r\n- Elements de dades arquetipades:\r\n--- l'element de dades \"Data/hora prevista\" té per objecte registrar el moment precís en què està previst fer el procediment. Nota: l'atribut d'hora ACTION corresponent a l'etapa Scheduled registrarà l'hora en què el procediment es va programar en un sistema, no la data/hora prevista en què es vol dur a terme el procediment; i\r\n--- la \"Data/hora de finalització\" té per objecte registrar l'hora exacta en què va finalitzar el procediment. Es pot utilitzar per documentar els procediments complexos amb múltiples components. Nota: l'atribut ACTION time corresponent al \"Procediment realitzat\" documentarà l'hora en què es va iniciar cada component realitzat. Aquest element de dades \"Data/hora final\" registrarà la data/hora del darrer component actiu del procediment. Això permetrà calcular la durada completa del procediment actiu.\r\n\r\nEn el context d'un informe quirúrgic, aquest arquetip s'utilitzarà per registrar únicament allò que es va fer durant el procediment. S'utilitzaran arquetips separats per registrar els altres components requerits de l'informe quirúrgic, inclosa la presa de mostres de teixit, l'ús de guia per imatges, les troballes de l'operació, les instruccions postoperatòries i els plans de seguiment.\r\n\r\nDins del context d'un llistat o resum de problemes, aquest arquetip es pot fer servir per representar procediments que s'han realitzat. L'AVALUATION.problem_diagnosis s'utilitzarà per representar els problemes i els diagnòstics del pacient.\r\n\r\nA la pràctica, molts procediments (per exemple, en atenció ambulatòria) es realitzaran una vegada i no se sol·licitaran amb anticipació. Els detalls sobre el procediment s'afegiran a la fase del procés \"Procediment completat\". En alguns casos, s'ordenarà un procediment recurrent i, en aquesta situació, es registraran les dades de la fase 'Procediment realitzat' cada vegada, deixant la instrucció en estat actiu. Quan es registra la darrera ocurrència, es registra l'acció \"Procediment completat\", cosa que mostra que aquesta ordre ara està en estat completat.\r\n\r\nEn altres situacions, com a l'atenció secundària, hi pot haver una ordre formal per a un procediment utilitzant l'arquetip d'INSTRUCTION corresponent. Aquest arquetip de ACTION es pot utilitzar per registrar el flux de treball de quan i com es va dur a terme l'ordre.\r\n\r\nRegistrar informació utilitzant aquest arquetip de ACTION indica que realment ha passat algun tipus d'activitat; En general, aquest serà el procediment en si, però pot ser un intent fallit o una altra activitat, com ara posposar el procediment. Si hi ha una ordre formal per al procediment, l‟estat d‟aquesta ordre està representat per la fase del procés contra la qual es registren les dades. Per exemple, en utilitzar aquest arquetip, l'estat de progrés d'una ordre de gastroscòpia es pot registrar a través d'entrades separades a les notes de progrés de l'HCE a cada fase del procés:\r\n- registrar la data/hora d'inici programada per a la gastroscòpia (procediment programat); i\r\n- Enregistrar que s'ha completat el procediment de gastroscòpia, inclosa informació sobre els detalls del procediment (Procediment completat).\r\n\r\nCal tenir en compte que al model de referència d'openEHR hi ha un atribut de 'Temps', l'objectiu del qual és registrar la data i l'hora en què es va realitzar cada fase del procés de l'Acció. Aquest és l'atribut que s'utilitzarà per registrar l'inici del procediment (usant la fase 'Procediment realitzat') o el moment en què es va avortar el procediment (usant la fase 'Procediment avortat').",
+          "misuse" : "No s'ha de fer servir per registrar detalls sobre l'anestèsia; per fer-ho, utilitzar un arquetip ACTION diferent.\r\n\r\nNo s'ha de fer servir per registrar detalls sobre estudis per imatge; per fer-ho, utilitzar l'arquetip ACTION.imaging_exam.\r\n\r\nNo s'ha de fer servir per registrar detalls sobre estudis de laboratori; per fer-ho, utilitzar l'arquetip ACTION.laboratory_test.\r\n\r\nNo s'ha de fer servir per registrar dades sobre l'educació impartida; per fer-ho, utilitzar l'arquetip ACTION.health_education.\r\n\r\nNo s'ha de fer servir per registrar detalls sobre activitats administratives; per això, utilitzar arquetips ADMIN específics.\r\n\r\nNo s'ha de fer servir per registrar detalls sobre activitats relacionades, com l'ús de seccions congelades preses durant una operació, medicació administrada durant el procediment o en fer ús de la guia per imatge durant el procediment; per això, utilitzar arquetips ACTION per separat i específics dins de la mateixa plantilla.\r\n\r\nNo s'ha de fer servir per registrar un informe d'operació o procediment complet: utilitzar una plantilla on aquest arquetip sigui només un component de l'informe complet.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -3615,7 +3690,10 @@
             "description" : "Datumet och/eller tid då hela proceduren, eller den sista komponenten i ett multikomponentförfarande, avslutades.",
             "comment" : "Kan endast användas i samband med steget \"Procedur utförd\" och i situationer där proceduren upprepas vid flera tillfällen innan den avslutas eller om det finns flera komponenter i hela proceduren. Detta kan vara detsamma som RM-tidsattributet för steget 'Procedur avslutad'."
           }
-        }
+        },
+        "pt-pt" : { },
+        "ca" : { },
+        "zh-cn" : { }
       },
       "termBindings" : {
         "NHS_OPCS-4" : {
@@ -3748,6 +3826,49 @@
       },
       "accreditation" : "Computer Engineer",
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-pt"
+      },
+      "author" : {
+        "name" : "Ana Garcia Niza",
+        "organisation" : "EY",
+        "email" : "ana.niza16@gmail.com"
+      },
+      "accreditation" : "I have no accreditation",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh-cn"
+      },
+      "author" : {
+        "name" : "Lin Zhang",
+        "organisation" : "Freelancer",
+        "email" : "linforest@163.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Julio de Sosa",
+        "organisation" : "Servei Català de la Salut",
+        "email" : "juliodesosa@catsalut.cat"
+      },
+      "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
@@ -3870,6 +3991,66 @@
           "use" : "يستخدم لتسجيل التفاصيل حول أي جهيزة جنيسة (غير محدودة الملكية) و التي يمكن أن تستخدم إما مباشرةً بطريقة علاجية أو تشخيصية أو تستخدم بشكل غير مباشر لدعم تقديم الخدمة الصحية.\nو يختلف استخدام اللفظ (جهيزة) على حسب السياق. \nو في داخل عالم المعايير, فإن اللفظ (جهيزة) يميل إلى الإشارة إلى الجهائز الإلكترونية أو الميكانيكية/الحركية و التي تدعم الرعاية الصحية, و تتطلب توثيق مكثف فيما يتعلق بالمواصفات و الصيانة... إلى آخره.\nو في سياق عالم المصطلحات فإن استخدام (جهيزة) واسع جدا, بما في ذلك أي شيئ محسوس يمكن استخدامه في تقديم الرعاية الصحية إما بشكل مباشر أو غير مباشر. \nو تتضمن الأمثلة: دوائر أجهزة التنفس الصناعي, مقاييس الجريان القِمِّي, مقاييس التنفس, نظارات العين, العدسات اللاصقة, القثطار داخل الوريد, طُعوم الثدي, البِدْلات, أنابيب المَنْزَح, و الحلقات المسمارية.\n\nو تم تصميم هذا النموذج ليمثل الأساس لعرض مركب لأي جهيزة, من مثال بسيط لنوع من غميسة البول مع تاريخ الاستخدام, إلى طعم أذن من كائن حيّ و الذي يتطلب توثيق مركب مثل البرنامج الإلكتروني, و الأجزاء الصلبة, و الصيانة و التعيير, إلى آخره.\n\nو بالنسبة لحالات الاستخدام المعتادة, فقد يكون من المناسب تخصيص هذا النموذج خاصة في القثطار داخل الوريد أو القثطار البولي.",
           "misuse" : "لا يستخدم لتسجيل المنتجات, مثل الأدوية أو التطعيمات أو ما شابه, و التي تستخدم لأغراض علاجية أو أيضية",
           "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Enregistrer les détails d'un dispositif médical utilisé dans la prestation de soins de santé.",
+          "keywords" : [ "appareil", "machine", "implant", "appareil", "cathéter", "prothèse", "aide", "biomédical", "instrument", "équipement", "compteur", "moniteur", "logiciel" ],
+          "use" : "À utiliser pour enregistrer les détails d'un dispositif médical utilisé dans la prestation de soins de santé.\r\n\r\nL'utilisation du terme \"dispositif médical\" varie en fonction du contexte. Dans le monde de la normalisation, le terme \"dispositif\" fait généralement référence à des appareils mécaniques ou électroniques qui contribuent aux soins de santé et nécessitent une documentation rigoureuse concernant le suivi de l'emplacement, l'entretien, l'étalonnage, les versions logicielles, etc. Dans le contexte de la terminologie, l'utilisation du terme \"dispositif\" est très large, incluant tout dispositif médical pouvant être utilisé dans la fourniture directe ou indirecte de soins cliniques, tant qu'il n'agit pas d'une manière qui exerce un effet pharmacologique, métabolique ou immunologique direct.\r\n\r\nLes exemples de dispositifs médicaux vont de dispositifs simples tels que les sondes urinaires, les abaisse-langue, les lentilles de contact, les implants articulaires artificiels, les implants mammaires et les pansements simples à des dispositifs avancés tels que les cœurs artificiels, les pousse-seringues, les spiromètres, les applications de téléphonie mobile et les dispositifs informatisés qui enregistrent des mesures médicales au point de soins. \r\n\r\nDans la situation complexe où un dispositif implanté chirurgicalement est utilisé comme moyen d'administrer des agents thérapeutiques tels que la chimiothérapie directement dans le corps, cet archétype sera utilisé pour enregistrer uniquement les détails concernant le dispositif médical lui-même et la commande de médicaments ainsi que les détails concernant l'administration effective de l'agent thérapeutique seront enregistrés à l'aide des archétypes INSTRUCTION et ACTION spécifiques liés à la médication.\r\n\r\nCet archétype est conçu pour fournir le cadre d'une représentation structurée de tout dispositif médical et les éléments de données qu'il contient ne sont pas spécifiques à un type de dispositif. Les dispositifs à usage unique nécessitent généralement des éléments de données tels que le numéro de lot et la date d'expiration. En revanche, ces éléments ne sont généralement pas pertinents pour les dispositifs durables, qui disposent souvent d'un ensemble d'identifiants, notamment un numéro d'identification unique, un numéro de série, un modèle, etc.\r\n\r\nEn outre, les différents types de dispositifs nécessiteront des informations spécifiques en fonction de leur utilisation. Ces données peuvent être enregistrées à l'aide d'archétypes CLUSTER spécifiques insérés dans le SLOT \"Propriétés spécifiques\". Par exemple, l'utilisation d'une sonde urinaire peut nécessiter des détails supplémentaires sur le diamètre et la longueur de la sonde, la composition du matériau, le nombre de lumières, etc.\r\n\r\nSi le dispositif médical comporte un certain nombre de composants nécessitant l'enregistrement de détails, chaque composant individuel doit être enregistré explicitement en utilisant un archétype CLUSTER.device supplémentaire inséré dans le SLOT \"Composants\".\r\n\r\nLe champ de données \"Version du logiciel\" ne permet d'enregistrer qu'une seule version. Cela s'applique principalement à un dispositif qui est une application logicielle. Si le dispositif comporte plusieurs composants logiciels ou matériels qui doivent être spécifiés, il convient d'utiliser un CLUSTER.device supplémentaire inséré dans le SLOT \"Components\".\r\n\r\nPour enregistrer des détails supplémentaires sur les dispositifs durables ou persistants concernant la propriété, le suivi de l'emplacement physique, les programmes de maintenance, etc., utilisez l'archétype CLUSTER.device_details inséré dans le SLOT \"Asset management\" de cet archétype.\r\n\r\nCet archétype a été conçu pour une utilisation générique dans d'autres archétypes qui ont besoin de décrire un dispositif. En voici quelques exemples : OBSERVATION.blood_pressure pour le sphygmomanomètre ; OBSERVATION.ecg pour l'appareil ECG ; OBSERVATION.urinalysis pour les bandelettes réactives et le dispositif utilisé pour le test ; ACTION.procedure ; et CLUSTER.exam_tympanic_membrane pour détailler l'otoscope utilisé.",
+          "misuse" : "Ne doit pas être utilisé pour enregistrer des données sur les médicaments qui exercent un effet pharmacologique, métabolique ou immunologique direct. Par exemple : un pansement imprégné de médicaments nécessitant une ordonnance devrait être enregistré en utilisant l'archétype INSTRUCTION.medication_order, axé sur les principes actifs, la posologie, etc.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Om de gegevens vast te leggen van een medisch hulpmiddel dat wordt gebruikt bij het verlenen van gezondheidszorg.",
+          "keywords" : [ "apparaat", "hulpmiddel", "machine", "implantaat", "toestel", "katheter", "prothese", "hulp", "biomedisch", "instrument", "apparatuur", "meter", "monitor", "software" ],
+          "use" : "Gebruiken om de details vast te leggen van een medisch hulpmiddel dat wordt gebruikt bij het verlenen van gezondheidszorg.\r\n\r\nHet gebruik van de term 'medisch hulpmiddel' varieert afhankelijk van de context. Binnen de normenwereld verwijst de term hulpmiddel meestal naar mechanische of elektronische hulpmiddel die de gezondheidszorg ondersteunen en die strikte documentatie vereisen met betrekking tot locatietracering, onderhoud, kalibratie, softwareversies enz. Binnen de terminologiecontext is het gebruik van hulpmiddel erg breed, inclusief elk medisch hulpmiddel dat direct of indirect kan worden gebruikt bij het verlenen van klinische zorg, zolang het niet werkt op een manier die een direct farmacologisch, metabolisch of immunologisch effect uitoefent.\r\n\r\nVoorbeelden van medische hulpmiddelen variëren van eenvoudige hulpmiddelen zoals urinekatheters, tongspatels, contactlenzen, kunstmatige gewrichtsimplantaten, borstimplantaten en gewone verbandmiddelen tot geavanceerde hulpmiddelen zoals kunstharten, spuitpompen, spirometers, apps voor mobiele telefoons en geautomatiseerde hulpmiddelen die medische metingen op het zorgpunt.\r\n\r\nIn de complexe situatie waarin een chirurgisch geïmplanteerd hulpmiddel wordt gebruikt als middel om therapeutische middelen zoals chemotherapie rechtstreeks in het lichaam af te geven, zal dit archetype worden gebruikt om alleen de details vast te leggen over het medische hulpmiddel zelf en het voorschrijven van medicatie en details over de daadwerkelijke toediening van het therapeutische middel zal worden geregistreerd met behulp van specifieke medicatiegerelateerde INSTRUCTION- en ACTION-archetypen.\r\n\r\nDit archetype is ontworpen om het raamwerk te bieden voor een gestructureerde beschrijving van elk medisch hulpmiddel en de gegevenselementen die hier zijn opgenomen, zijn niet specifiek voor een bepaald type hulpmiddel. Hulpmiddelen voor eenmalig gebruik vereisen gewoonlijk gegevenselementen zoals het partijnummer en de vervaldatum. Deze zijn daarentegen meestal niet relevant voor duurzame hulpmiddelen die vaak een reeks identificatiegegevens hebben, waaronder een UID, serienummer, model enz.\r\n\r\nVerder zullen verschillende soorten hulpmiddelen specifieke informatie nodig hebben die relevant is voor hun doel. Deze gegevens kunnen worden vastgelegd met behulp van specifieke CLUSTER-archetypen die zijn ingevoegd in het SLOT 'Eigenschappen'. Bijvoorbeeld: het gebruik van een urinekatheter kan aanvullende details vereisen over de diameter en lengte van de katheter, materiaalsamenstelling, aantal lumen etc.\r\n\r\nAls het medische hulpmiddel een aantal componenten heeft waarvoor details moeten worden vastgelegd, moet elk afzonderlijk component expliciet worden geregistreerd door een extra CLUSTER.device-archetype te gebruiken dat is ingevoegd in het 'Componenten'-slot.\r\n\r\nIn het gegevensveld 'Softwareversie' kan slechts één versie worden vastgelegd. Dit is in de eerste plaats van toepassing op een hulpmiddel dat een softwareapplicatie is. Als het hulpmiddel meerdere software- of hardwarecomponenten heeft die moeten worden gespecificeerd, moet dit worden gedaan door een toevoeging CLUSTER.device te gebruiken die is ingevoegd in de 'Componenten'-slot.\r\n\r\nGebruik het archetype CLUSTER.device_details ingevoegd in de slot 'Assetmanagement' in dit archetype om aanvullende details vast te leggen voor duurzame of blijvende hulpmiddelen die betrekking hebben op eigendom, het volgen van fysieke locaties, onderhoudsschema's, enzovoort.\r\n\r\nDit archetype is ontworpen voor generiek gebruik binnen andere archetypen die een hulpmiddel moeten beschrijven. Voorbeelden zijn: OBSERVATION.blood_pressure voor de bloeddrukmeter; OBSERVATION.ecg voor het ECG-apparaat; OBSERVATION.urinalysis voor de reagensstrips en het apparaat waarmee getest wordt; ACTION.procedure; en CLUSTER.exam_tympanic_membrane om de gebruikte otoscoop te beschrijven.",
+          "misuse" : "Niet gebruiken voor het vastleggen van gegevens over geneesmiddelen die een directe farmacologische, metabolische of immunologische werking hebben. Bijvoorbeeld: een met medicijnen geïmpregneerd verband waarvoor een recept nodig is, moet worden geregistreerd met behulp van het archetype INSTRUCTION.medication_order, gericht op de actieve ingrediënten, dosering etc.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Registrar les dades d’un producte sanitari utilitzat per a proporcionar atenció sanitària.",
+          "keywords" : [ "producte", "màquina", "implant", "aparell", "catèter", "pròtesi", "ajuda", "biomèdic", "instrument", "equip", "metre", "monitor", "programari" ],
+          "use" : "Utilitzar per a registrar les dades d’un producte sanitari utilitzat per a proporcionar atenció sanitària.\r\n\r\nL’ús del terme «producte sanitari» varia depenent del context. Dins de l’àmbit Normatiu, el mot «producte» tendeix a referir-se a dispositius mecànics o electrònics que ajuden a l’atenció sanitària i que exigeixen documentació rigorosa pel que fa al rastreig de ubicació, manteniment, calibració, versions de programari, etc. Dins del context de la terminologia, l’ús de «producte» és molt general, incloent qualsevol producte sanitari que es pugui utilitzar per a proporcionar cuidats clínics directa o indirectament mentre no es comporti de forma que exerceixi un efecte farmacològic, metabòlic o immunològic directe.\r\n\r\nExemples de productes sanitaris oscil·len entre productes simples, com ara catèters urinaris, depressors linguals, lents de contacte, implants d’articulacions artificials, implants de mama i apòsits simples i productes avançats, com ara cors artificials, bombes d’infusió, espiròmetres, aplicacions de telèfon mòbil i dispositius informatitzats que capturin les mesures mèdiques al punt d’assistència sanitària.\r\n\r\nSi es donés la situació complexa que un producte implantat quirúrgicament s’usés com a mitjà per a subministrar agents terapèutics com ara quimioteràpia directament al cos, aquest arquetip s’utilitzarà per a registrar només les dades sobre el producte sanitari en si, i l’encàrrec de medicació i les dades sobre l’administració real de l’agent terapèutic es registraran utilitzant arquetips específics relacionats amb la medicació de tipus INSTRUCTION i ACTION.\r\n\r\nAquest arquetip està dissenyat per a proporcionar la infraestructura per a la representació estructurada de qualsevol producte sanitari, i els elements de dades que estan continguts ací no són específics per a cap tipus de producte. Productes d’un sol ús normalment exigiran elements de dades com Número de Lot i Data de Caducitat. Per contrast, aquests elements, per regla general, no seran rellevants per als productes duradors, els quals tindran sovint un conjunt d’identificadors, incloent un identificador d’usuari, Número de Sèrie, Model, etc.\r\n\r\nA més, diferents tipus de productes exigiran informació específica rellevant per a la seua finalitat. Aquestes dades es poden registrar utilitzant arquetips específics de tipus CLUSTER inserits dins del SLOT «Característiques específiques». Per exemple: l’ús d’un catèter urinari pot exigir dades addicionals sobre el diàmetre i la llargària del catèter, la composició del material, quantitat de lúmens, etc.\r\n\r\nSi el producte sanitari conté una quantitat de components que exigeixen que es registrin les seues dades, cada component concret s’haurà de registrar de forma explícita utilitzant un arquetip addicional CLUSTER.device inserit dins del SLOT «Components».\r\n\r\nEl camp de dades «Versió del Programari» només permet que es registri una única versió. Això és aplicable principalment per a un producte que sigui una aplicació de programari. Si el producte té múltiples components de programari o de maquinari que s’han d’especificar, això s’haurà de fer utilitzant un CLUSTER.device addicional inserit dins del SLOT «Components».\r\n\r\nPer a registrar dades addicionals per a productes duradors o persistents relacionats amb la propietat, el rastreig de ubicació física, horaris de manteniment, etc., utilitzar un arquetip CLUSTER.device_details inserit dins del SLOT «Gestió d’actius» d’aquest arquetip.\r\n\r\nAquest arquetip s’ha dissenyat per a l’ús genèric dins d’altres arquetips que han de descriure un producte. Exemples inclouen: OBSERVATION.blood_pressure per al tensiòmetre; OBSERVATION.ecg per a la màquina ECG; OBSERVATION.urinalysis per a les tires reactives i el producte utilitzat per a les proves; ACTION.procedure; i CLUSTER.exam_tympanic_membrane per a detallar l’otoscopi utilitzat.",
+          "misuse" : "No utilitzar per a registrar dades sobre medicaments que exerceixin un efecte farmacològic, metabòlic o immunològic directe. Per exemple: un apòsit impregnat de medicina que exigeixi una prescripció s’haurà de registrar utilitzant l’arquetip INSTRUCTION.medication_order, enfocat sobre les substàncies actives, dosificació, etc.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Registrar los datos de un dispositivo sanitario utilizado para proporcionar atención sanitaria.",
+          "keywords" : [ "dispositivo", "máquina", "implante", "aparato", "catéter", "prótesis", "ayuda", "biomédico", "instrumento", "equipo", "metro", "monitor", "software" ],
+          "use" : "Usar para registrar los datos de un dispositivo sanitario utilizado para proporcionar atención sanitaria.\r\n\r\nEl uso del término \"dispositivo sanitario\" varía según el contexto.\r\nEn el ámbito normativo, el término \"dispositivo\" suele referirse a dispositivos mecánicos o electrónicos que ayudan en la atención sanitaria y que requieren una documentación rigurosa respecto al seguimiento de ubicación, mantenimiento, calibración, versiones de software, etc.\r\nEn el contexto terminológico, el uso de \"dispositivo\" es mucho más amplio e incluye cualquier dispositivo sanitario que pueda utilizarse para proporcionar cuidados clínicos directa o indirectamente, siempre que no ejerza un efecto farmacológico, metabólico o inmunológico, directo.\r\n\r\nEjemplos de dispositivos sanitarios abarcan desde dispositivos simples como catéteres urinarios, depresores linguales, lentes de contacto, implantes de articulaciones artificiales, implantes mamarios y apósitos simples; hasta dispositivos avanzados como corazones artificiales, bombas de infusión, espirómetros, aplicaciones móviles y dispositivos informatizados que capturan mediciones médicas en el punto de atención.\r\n\r\nSi se diera una situación compleja, como que un dispositivo implantado quirúrgicamente se utilice como medio para administrar agentes terapéuticos (por ejemplo, quimioterapia directamente al cuerpo), este arquetipo se utilizará únicamente para registrar los datos del dispositivo sanitario en sí, mientras que la prescripción de la medicación y los datos sobre la administración del agente terapéutico se registrarán mediante arquetipos específicos relacionados con la medicación, como los de tipo INSTRUCTION y ACTION.\r\n\r\nEste arquetipo está diseñado para proporcionar la infraestructura para una representación estructurada de cualquier dispositivo sanitario, y los elementos de datos que contiene no son específicos de ningún tipo concreto de dispositivo.\r\nPor ejemplo: dispositivos de un solo uso requerirán normalmente datos como número de lote y fecha de caducidad.\r\n\r\nEn cambio, estos datos no suelen ser relevantes para dispositivos duraderos, los cuales suelen tener un conjunto diferente de identificadores, como número de serie, modelo, identificador de usuario, etc.\r\n\r\nAdemás, distintos tipos de dispositivos exigirán información específica relacionada con su finalidad clínica. Estos datos pueden registrarse utilizando arquetipos específicos de tipo CLUSTER, insertados dentro del SLOT «Características específicas». Por ejemplo: el uso de un catéter urinario puede requerir datos adicionales como el diámetro y longitud del catéter, material, cantidad de lúmenes, etc.\r\n\r\nSi el dispositivo sanitario contiene varios componentes que requieren un registro individualizado, cada componente debe registrarse explícitamente mediante un arquetipo adicional CLUSTER.device, insertado dentro del SLOT «Componentes».\r\n\r\nEl campo de datos \"Versión del software\" solo permite registrar una única versión, lo cual es aplicable principalmente si el dispositivo es una aplicación de software. Si el dispositivo incluye múltiples componentes de software o hardware que necesitan especificarse por separado, esto debe hacerse usando un CLUSTER.device adicional en el SLOT «Componentes».\r\n\r\nPara registrar información adicional relacionada con dispositivos sanitarios duraderos o persistentes, como datos de propiedad, ubicación física, cronograma de mantenimiento, etc., se debe utilizar un arquetipo CLUSTER.device_details insertado en el SLOT «Gestión de activos» de este arquetipo.\r\n\r\nEste arquetipo está diseñado para ser utilizado de manera genérica dentro de otros arquetipos que necesitan describir un dispositivo.\r\nEjemplos incluyen: OBSERVATION.blood_pressure, para el tensiómetro; OBSERVATION.ecg, para el electrocardiógrafo; OBSERVATION.urinalysis, para tiras reactivas y otros dispositivos usados en análisis de orina; ACTION.procedure y CLUSTER.exam_tympanic_membrane, para detallar el otoscopio utilizado.",
+          "misuse" : "No utilizar para registrar los datos sobre productos médicos que ejerzan un efecto farmacológico, metabólico o inmunológico directo. Por ejemplo: un apósito impregnado de medicina que requiera una prescripción se tendrá que registrar utilizando el arquetipo INSTRUCTION.medication_order, enfocado sobre substancias activas, dosificación, etc.",
           "originalResourceUri" : { },
           "otherDetails" : { }
         }
@@ -4009,7 +4190,7 @@
           "nodeId" : "at0026.2",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-medical_device_regulatory_details-007.v0",
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-medical_device_regulatory_details-001.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -4207,7 +4388,11 @@
             "text" : "Device Lot or Batch number",
             "description" : "Det nummer som tillverkaren tilldelar, numret identifierar en grupp av artiklar som tillverkas samtidigt, vanligtvis finns på etiketten eller förpackningsmaterialet."
           }
-        }
+        },
+        "nl" : { },
+        "fr" : { },
+        "ca" : { },
+        "es" : { }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
@@ -4305,6 +4490,63 @@
       },
       "author" : {
         "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Pieter Bos, Jelte Zeilstra",
+        "organisation" : "Nedap"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Laura Moral Lopez",
+        "organisation" : "Sistema de Salut de Catalunya",
+        "email" : "lauramoral@catsalut.cat"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Tradcrea"
+      }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Laura Moral Lopez",
+        "organisation" : "Sistema de Salut de Catalunya",
+        "email" : "lauramoral@catsalut.cat"
       },
       "otherDetails" : { }
     } ]
@@ -4443,6 +4685,51 @@
           "misuse" : "Niet gebruiken om meerdere unilaterale/bilaterale structuren vast te leggen.",
           "originalResourceUri" : { },
           "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Identifier et enregistrer des détails structurés concernant un site physique unique sur ou dans le corps humain en utilisant des termes anatomiques macroscopiques.",
+          "keywords" : [ "emplacement", "site", "anatomique", "région anatomique", "anatomie topographique", "macroscopique", "anatomique", "anatomie" ],
+          "use" : "*Use to record structured details about a single identified physical site on or within the human body.\r\n\r\nIn many situations, a simple data element such as ‘Location of measurement’ or ‘Body site’ will be sufficient and practical when the value set is straightforward. This archetype is intended for cases where a more detailed or structured representation of an anatomical site is required, including precise or compound descriptions. It can be nested within relevant ENTRY or CLUSTER archetypes such as those for symptoms, findings, or interventions to support multiaxial or postcoordinated anatomical expressions. Examples include documenting pain in the lower limb, tenderness at McBurney’s point, or a laceration on the palmar aspect of the proximal right thumb.\r\n\r\nThe ‘Laterality' data element may be used to qualify whether a paired structure or region is affected on the left, right, or both sides. When involvement is symmetrical and equivalent on both sides, for example the same cancer in both lungs or similar pain in both legs, record 'Left and right’. However, when the clinical characteristics differ between sides, two separate instances should be used:\r\n\r\n- Two parallel instances of this archetype within the same SLOT, each with its own laterality and specific details. For example, documenting equal tumours in the lower left lung lobe and the upper right lung lobe.\r\n- Two parallel instances of the parent archetype, each containing an instance of this archetype, when there are clinically significant differences such as tumour type, size, or severity in each lung.\r\n\r\nThe 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In situations where this archetype is used to name a large or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location, for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below the right costal margin on the chest wall in the mid-clavicular line.\r\n\r\nIf this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in utero, then the anatomical location will be identifying a body site on or within the fetus. (en)",
+          "misuse" : "*Not to be used to describe involvement of both sides of a paired structure when the clinical findings differ significantly between sides. In such cases, each side should be documented using a separate instance of this archetype with side-specific detail. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Identificar i registrar detalls estructurats sobre una sola part del cos humà utilitzant termes anatòmics macroscòpics.",
+          "keywords" : [ "ubicació", "lloc", "anatòmica", "regió anatòmica", "anatomia topogràfica", "macroscòpica", "anatòmica" ],
+          "use" : "*Use to record structured details about a single identified physical site on or within the human body.\r\n\r\nIn many situations, a simple data element such as ‘Location of measurement’ or ‘Body site’ will be sufficient and practical when the value set is straightforward. This archetype is intended for cases where a more detailed or structured representation of an anatomical site is required, including precise or compound descriptions. It can be nested within relevant ENTRY or CLUSTER archetypes such as those for symptoms, findings, or interventions to support multiaxial or postcoordinated anatomical expressions. Examples include documenting pain in the lower limb, tenderness at McBurney’s point, or a laceration on the palmar aspect of the proximal right thumb.\r\n\r\nThe ‘Laterality' data element may be used to qualify whether a paired structure or region is affected on the left, right, or both sides. When involvement is symmetrical and equivalent on both sides, for example the same cancer in both lungs or similar pain in both legs, record 'Left and right’. However, when the clinical characteristics differ between sides, two separate instances should be used:\r\n\r\n- Two parallel instances of this archetype within the same SLOT, each with its own laterality and specific details. For example, documenting equal tumours in the lower left lung lobe and the upper right lung lobe.\r\n- Two parallel instances of the parent archetype, each containing an instance of this archetype, when there are clinically significant differences such as tumour type, size, or severity in each lung.\r\n\r\nThe 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In situations where this archetype is used to name a large or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location, for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below the right costal margin on the chest wall in the mid-clavicular line.\r\n\r\nIf this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in utero, then the anatomical location will be identifying a body site on or within the fetus. (en)",
+          "misuse" : "*Not to be used to describe involvement of both sides of a paired structure when the clinical findings differ significantly between sides. In such cases, each side should be documented using a separate instance of this archetype with side-specific detail. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Identificar y registrar detalles estructurados sobre una única zona corporal del cuerpo humano, o dentro de él, utilizando términos anatómicos macroscópicos.",
+          "keywords" : [ "localización", "lugar", "anatómico", "región", "anatómica", "anatomía", "topográfica", "macroscópica", "anatómica", "anatomía" ],
+          "use" : "*Use to record structured details about a single identified physical site on or within the human body.\r\n\r\nIn many situations, a simple data element such as ‘Location of measurement’ or ‘Body site’ will be sufficient and practical when the value set is straightforward. This archetype is intended for cases where a more detailed or structured representation of an anatomical site is required, including precise or compound descriptions. It can be nested within relevant ENTRY or CLUSTER archetypes such as those for symptoms, findings, or interventions to support multiaxial or postcoordinated anatomical expressions. Examples include documenting pain in the lower limb, tenderness at McBurney’s point, or a laceration on the palmar aspect of the proximal right thumb.\r\n\r\nThe ‘Laterality' data element may be used to qualify whether a paired structure or region is affected on the left, right, or both sides. When involvement is symmetrical and equivalent on both sides, for example the same cancer in both lungs or similar pain in both legs, record 'Left and right’. However, when the clinical characteristics differ between sides, two separate instances should be used:\r\n\r\n- Two parallel instances of this archetype within the same SLOT, each with its own laterality and specific details. For example, documenting equal tumours in the lower left lung lobe and the upper right lung lobe.\r\n- Two parallel instances of the parent archetype, each containing an instance of this archetype, when there are clinically significant differences such as tumour type, size, or severity in each lung.\r\n\r\nThe 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In situations where this archetype is used to name a large or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location, for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below the right costal margin on the chest wall in the mid-clavicular line.\r\n\r\nIf this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in utero, then the anatomical location will be identifying a body site on or within the fetus. (en)",
+          "misuse" : "*Not to be used to describe involvement of both sides of a paired structure when the clinical findings differ significantly between sides. In such cases, each side should be documented using a separate instance of this archetype with side-specific detail. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
         }
       }
     },
@@ -4484,6 +4771,34 @@
           "occurrences" : "0..0",
           "nodeId" : "at0065.1",
           "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "nodeId" : "at0002.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_CODED_TEXT",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "defining_code",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "rmTypeName" : "TERMINOLOGY_CODE",
+                  "occurrences" : "1..1",
+                  "terminologyId" : {
+                    "value" : "local"
+                  },
+                  "constraint" : [ "ac0.1" ],
+                  "selectedTerminologies" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
           "attributeTuples" : [ ]
         }, {
           "@type" : "C_COMPLEX_OBJECT",
@@ -4566,18 +4881,108 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "ar-sy" : { },
-        "sl" : { },
-        "en" : { },
-        "nb" : { },
-        "pt-br" : { },
-        "de" : { },
-        "nl" : { },
-        "sv" : { }
+        "ar-sy" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "sl" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "en" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "nb" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "pt-br" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "de" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "nl" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "sv" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "fr" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "ca" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        },
+        "es" : {
+          "ac0.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.1",
+            "description" : ""
+          }
+        }
       },
-      "termBindings" : { },
+      "termBindings" : {
+        "SNOMED-CT" : {
+          "at0002.1" : "term:SNOMED-CT::272741003"
+        }
+      },
       "terminologyExtracts" : { },
-      "valueSets" : { }
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at0003", "at0004" ]
+        }
+      }
     },
     "adlVersion" : "1.4",
     "buildUid" : "13ee6d25-aa99-4221-bdc1-3c7ee7e58795",
@@ -4684,10 +5089,54 @@
         "email" : "michiel.klitsie@nedap.com"
       },
       "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ca"
+      },
+      "author" : {
+        "name" : "Clara Calleja Vega",
+        "organisation" : "CatSalut. Servei Català de la Salut.",
+        "email" : "ccalleja@catsalut.cat"
+      },
+      "otherDetails" : {
+        "other_contributors" : "TRADCREA"
+      }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Clara Calleja Vega",
+        "organisation" : "CatSalut. Servei Català de la Salut.",
+        "email" : "ccalleja@catsalut.cat"
+      },
+      "otherDetails" : { }
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "d0dc5b58-056a-4e37-8c63-be9587adb89b",
+    "uid" : "e63f0a44-cb67-42b1-be9a-be5407d2aa5f",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -4696,32 +5145,15 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "D4B06B7B01082A38E5A95EDD501F1969"
+        "PARENT:MD5-CAM-1.0.1" : "47c8a598af814c863d695e663849a79a"
       },
-      "details" : {
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "This cluster is to support the requirement to record 'Class' and possibly other values as part of a medical device record., where it is necessary to store these values in the EHR. Its initial purpose is specifically to enable the recording of the 'Class' of a medical device as defined in the United Kingdom's \"Medicines and Healthcare products Regulatory Agency\" (MHRA) requirements.",
-          "keywords" : [ "mhra, device, regulatory, class, category, mdr" ],
-          "use" : "Use inside the Medical Device or Medical Device Details clusters to allow the recording of taxonomical definitions of attributes relating to the regulation of medical devices, such as Class and Category.",
-          "misuse" : "Do not use this cluster for other medical device details, all of which should be captured in other medical device archetypes. If the required data can be externally referenced then it may be more appropriate to do that rather than persist the data inside the EHR.",
-          "copyright" : "© Apperta Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
+      "details" : { }
     },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.medical_device_regulatory_details.v0",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.medical_device_regulatory_details.v1",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-medical_device_regulatory_details-007.v0"
+      "value" : "openEHR-EHR-CLUSTER.ovl-medical_device_regulatory_details-001.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -4731,29 +5163,6 @@
         "@type" : "C_ATTRIBUTE",
         "rmAttributeName" : "items",
         "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ELEMENT",
-          "nodeId" : "at0001.1",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "value",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "DV_TEXT",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "existence" : "0..1",
-                "children" : [ {
-                  "@type" : "C_STRING",
-                  "constraint" : [ "I", "IIa", "IIb", "III" ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        }, {
           "@type" : "C_COMPLEX_OBJECT",
           "rmTypeName" : "ELEMENT",
           "occurrences" : "0..0",
