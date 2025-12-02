@@ -20,7 +20,7 @@ description
 			language = <[ISO_639-1::en]>
 			purpose = <"This cluster is to support the requirement to record 'Class' and possibly other values as part of a medical device record., where it is necessary to store these values in the EHR. Its initial purpose is specifically to enable the recording of the 'Class' of a medical device as defined in the United Kingdom's \"Medicines and Healthcare products Regulatory Agency\" (MHRA) requirements.">
 			keywords = <"mhra, device, regulatory, class, category, mdr", ...>
-			copyright = <"© Apperta Foundation">
+			copyright = <"© NHS Education for Scotland">
 			use = <"Use inside the Medical Device or Medical Device Details clusters to allow the recording of taxonomical definitions of attributes relating to the regulation of medical devices, such as Class and Category.">
 			misuse = <"Do not use this cluster for other medical device details, all of which should be captured in other medical device archetypes. If the required data can be externally referenced then it may be more appropriate to do that rather than persist the data inside the EHR.">
 		>
@@ -34,10 +34,9 @@ https://www.gov.uk/government/publications/medicines-and-medical-devices-bill-ov
 		["current_contact"] = <"paul.miller@nhs.scot">
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["original_publisher"] = <"Apperta UK">
-		["custodian_namespace"] = <"uk.org.clinicalmodels">
 		["MD5-CAM-1.0.1"] = <"2af5dfac25199a1de2cfc21a92064b9d">
 		["build_uid"] = <"4c3b6c44-c6e3-4a8b-8a9a-70c420a1c72d">
-		["revision"] = <"1.0">
+		["revision"] = <"0">
 	>
 
 definition
