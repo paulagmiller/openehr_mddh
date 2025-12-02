@@ -1,5 +1,5 @@
 archetype (adl_version=1.4; uid=76dd904e-c851-4744-90fd-00218686d6f2)
-	openEHR-EHR-CLUSTER.medical_device_regulatory_details.v1
+	openEHR-EHR-CLUSTER.Medical_device_regulatory_details.v1
 
 concept
 	[at0000]
@@ -35,13 +35,13 @@ https://www.gov.uk/government/publications/medicines-and-medical-devices-bill-ov
 		["original_namespace"] = <"uk.org.clinicalmodels">
 		["original_publisher"] = <"Apperta UK">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"47c8a598af814c863d695e663849a79a">
+		["MD5-CAM-1.0.1"] = <"2af5dfac25199a1de2cfc21a92064b9d">
 		["build_uid"] = <"4c3b6c44-c6e3-4a8b-8a9a-70c420a1c72d">
 		["revision"] = <"1.0">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- medical_device_regulatory_details
+	CLUSTER[at0000] matches {    -- Medical_device_regulatory_details
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] occurrences matches {0..1} matches {    -- Class
 				value matches {
@@ -78,7 +78,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"medical_device_regulatory_details">
+					text = <"Medical_device_regulatory_details">
 					description = <"NES_TS UK_MHRA Medical Device. This cluster is for enabling the recording of regulatory details about a medical device, specifically 'class', in the EHR. THe requirement originally arose in the NHS Scotland Medical Devices Data Hub programme, part of the 'Scan for Safety' programme intended to enable the capture of details of implantable medical devices at the time of surgical procedures. This cluster allows the programme to capture the 'Class' value as it was at the time of the event.">
 				>
 				["at0001"] = <
