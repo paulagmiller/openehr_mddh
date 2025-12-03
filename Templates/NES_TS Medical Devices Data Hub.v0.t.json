@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "4.1.0",
       "build_uid" : "75f1ebce-78bd-4898-99b6-c888938e81cb",
-      "MD5-CAM-1.0.1" : "7ef435da6dfccbf2c53db8496c021471",
+      "MD5-CAM-1.0.1" : "e82c18a850121c06910e5cb8471fa3b3",
       "PARENT:MD5-CAM-1.0.1" : "2A789520F48E91960C4825733C8BA68F",
       "original_language" : "ISO_639-1::en"
     },
@@ -4190,7 +4190,7 @@
           "nodeId" : "at0026.3",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-Medical_device_regulatory_details-001.v1",
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-Medical_device_regulatory_details-001.v0",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -5136,7 +5136,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "762c5b49-1efd-4956-98d2-0e4951381743",
+    "uid" : "c034e576-989a-48e3-b537-39fa4c7e420a",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -5145,15 +5145,15 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "2af5dfac25199a1de2cfc21a92064b9d"
+        "PARENT:MD5-CAM-1.0.1" : "504FEB5B5E546092047438FEBD6B0704"
       },
       "details" : { }
     },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.Medical_device_regulatory_details.v1",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.Medical_device_regulatory_details.v0",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-Medical_device_regulatory_details-001.v1"
+      "value" : "openEHR-EHR-CLUSTER.ovl-Medical_device_regulatory_details-001.v0"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
@@ -5229,7 +5229,7 @@
       "valueSets" : { }
     },
     "adlVersion" : "1.4",
-    "buildUid" : "4c3b6c44-c6e3-4a8b-8a9a-70c420a1c72d",
+    "buildUid" : "337b4a33-48c7-4a01-ba55-3552d2e47c98",
     "rmName" : "openehr",
     "rmRelease" : "1.1.0",
     "generated" : true,
