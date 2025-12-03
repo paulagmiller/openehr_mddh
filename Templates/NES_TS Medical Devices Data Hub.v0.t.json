@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "3.0.0",
+      "sem_ver" : "4.0.0",
       "build_uid" : "75f1ebce-78bd-4898-99b6-c888938e81cb",
-      "MD5-CAM-1.0.1" : "f968bcc6948a1ebaa26eca546ae3b1a3",
+      "MD5-CAM-1.0.1" : "7ef435da6dfccbf2c53db8496c021471",
       "PARENT:MD5-CAM-1.0.1" : "2A789520F48E91960C4825733C8BA68F",
       "original_language" : "ISO_639-1::en"
     },
@@ -4187,10 +4187,10 @@
           "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "CLUSTER",
           "occurrences" : "0..1",
-          "nodeId" : "at0026.2",
+          "nodeId" : "at0026.3",
           "attributes" : [ ],
           "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-medical_device_regulatory_details-001.v1",
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-Medical_device_regulatory_details-001.v1",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -5136,7 +5136,7 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "e63f0a44-cb67-42b1-be9a-be5407d2aa5f",
+    "uid" : "762c5b49-1efd-4956-98d2-0e4951381743",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
       "originalAuthor" : { },
@@ -5145,15 +5145,15 @@
       "references" : { },
       "conversionDetails" : { },
       "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "47c8a598af814c863d695e663849a79a"
+        "PARENT:MD5-CAM-1.0.1" : "2af5dfac25199a1de2cfc21a92064b9d"
       },
       "details" : { }
     },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.medical_device_regulatory_details.v1",
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.Medical_device_regulatory_details.v1",
     "differential" : true,
     "archetypeId" : {
       "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-medical_device_regulatory_details-001.v1"
+      "value" : "openEHR-EHR-CLUSTER.ovl-Medical_device_regulatory_details-001.v1"
     },
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
