@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=ae65fb8f-e6ed-4bf6-88d1-271bb55f58cb)
+archetype (adl_version=1.4; uid=956567d0-c059-4abe-8d74-62382b5dee28)
 	openEHR-EHR-CLUSTER.xds_metadata.v0
 
 concept
@@ -21,21 +21,21 @@ description
 			language = <[ISO_639-1::en]>
 			purpose = <"To record additional composition metadata aligned with IHE-XDS which is not already available from the Reference Model COMPOSITION class.">
 			keywords = <"Document, metadata","IHE","XDS">
-			copyright = <"© Apperta Foundation">
+			copyright = <"© Apperta Foundation, NHS Education for Scotland">
 			use = <"Use to add IHE-XDS aligned metadata to a COMPOSITION.context, which along with existing COMPOSITION attributes, allows the composition to be registered in an IHE-XDS environment.">
 		>
 	>
 	other_details = <
-		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
-		["custodian_organisation"] = <"Apperta Foundation">
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"Apperta UK">
 		["references"] = <"Fabjan B. Querying openEHR-based Electronic Health Record in the IHE XDS enviroment [Internet]. eprints.fri.uni-lj.si. 2016 [cited 2020 Apr 23]. Available from: http://eprints.fri.uni-lj.si/3476/
 ‌">
 		["current_contact"] = <"Ian McNicoll <ian@freshehr.com>">
 		["original_namespace"] = <"uk.org.clinicalmodels">
-		["original_publisher"] = <"UK Clinical Models">
+		["original_publisher"] = <"Apperta UK">
 		["custodian_namespace"] = <"uk.org.clinicalmodels">
-		["MD5-CAM-1.0.1"] = <"E62D896E2577FA727C75A9EFFD7CA63E">
-		["build_uid"] = <"feed3fab-2d92-470b-a6c9-f19499a58c8b">
+		["MD5-CAM-1.0.1"] = <"F3CB86F1A6885535E70BECD7C5BB5E00">
+		["build_uid"] = <"7763a4d8-a49c-450c-bcba-6c5a7d2f692e">
 		["revision"] = <"0.0.1-alpha">
 	>
 
